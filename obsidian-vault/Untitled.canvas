@@ -1,0 +1,22 @@
+{
+	"nodes":[
+		{"id":"e575c3966104f9e9","type":"file","file":"Перешкоди.md","x":-620,"y":-900,"width":400,"height":500},
+		{"id":"a00d2c06775cc7bd","type":"file","file":"Система сезонів.md","x":-620,"y":-320,"width":400,"height":400},
+		{"id":"1c5e7c067e8f5509","type":"file","file":"Сезони.md","x":-80,"y":-320,"width":400,"height":400},
+		{"id":"199790487c66a859","type":"file","file":"Як заробляти гроші.md","x":-100,"y":-1960,"width":400,"height":400},
+		{"id":"1da0d2118d4e526d","type":"file","file":"Гроші/Базар.md","x":-100,"y":-1400,"width":400,"height":400},
+		{"id":"d7ba852da13b8b97","type":"file","file":"Гроші/Овочі.md","x":480,"y":-1400,"width":340,"height":400},
+		{"id":"063c6f3a2323682f","type":"file","file":"Рівні/1 рівень.md","x":480,"y":-520,"width":400,"height":400},
+		{"id":"ffea60a414dc7d23","type":"file","file":"Рівні/2 Рівень.md","x":920,"y":-520,"width":400,"height":400},
+		{"id":"242cfcb4903bbf53","type":"file","file":"Рівні/Рівні.md","x":1040,"y":-920,"width":160,"height":80},
+		{"id":"bf38884501ad3c05","x":1360,"y":-520,"width":400,"height":400,"type":"file","file":"Рівні/3 Рівень.md"}
+	],
+	"edges":[
+		{"id":"b64ecd2706b29800","fromNode":"a00d2c06775cc7bd","fromSide":"right","toNode":"1c5e7c067e8f5509","toSide":"left"},
+		{"id":"ab4e59fc596e04df","fromNode":"199790487c66a859","fromSide":"bottom","toNode":"1da0d2118d4e526d","toSide":"top"},
+		{"id":"9571c92a7fbaee67","fromNode":"1da0d2118d4e526d","fromSide":"right","toNode":"d7ba852da13b8b97","toSide":"left"},
+		{"id":"e746ae82d133db50","fromNode":"242cfcb4903bbf53","fromSide":"bottom","toNode":"063c6f3a2323682f","toSide":"top"},
+		{"id":"35472336c91fb486","fromNode":"242cfcb4903bbf53","fromSide":"bottom","toNode":"ffea60a414dc7d23","toSide":"top"},
+		{"id":"67311f909f140017","fromNode":"242cfcb4903bbf53","fromSide":"bottom","toNode":"bf38884501ad3c05","toSide":"top"}
+	]
+}
