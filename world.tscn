@@ -1,0 +1,24 @@
+[gd_scene format=4 uid="uid://6hkh651dwn7s"]
+
+[ext_resource type="Texture2D" uid="uid://c8kxfc7jp47en" path="res://assets/textures/tilemap_floor.png" id="1_f3sb7"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fj7yv"]
+texture = ExtResource("1_f3sb7")
+margins = Vector2i(1, 1)
+separation = Vector2i(1, 2)
+texture_region_size = Vector2i(44, 23)
+0:1/0 = 0
+0:0/0 = 0
+0:0/0/z_index = 1
+
+[sub_resource type="TileSet" id="TileSet_tlwt5"]
+tile_shape = 1
+tile_size = Vector2i(44, 22)
+sources/1 = SubResource("TileSetAtlasSource_fj7yv")
+
+[node name="World" type="Node2D" unique_id=58810820]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=354919931]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAD+////AQAAAAEAAAD//wAAAQAAAAEAAAD//wEAAQAAAAEAAAAAAAAAAQAAAAEAAAAAAP//AQAAAAEAAAAAAP7/AQAAAAEAAAD///3/AQAAAAEAAAD///7/AQAAAAEAAAD/////AQAAAAEAAAD9////AQAAAAAAAAD+/wAAAQAAAAAAAAD+/wEAAQAAAAAAAAD//wIAAQAAAAAAAAD//wMAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAEAAQAAAAAAAAABAAAAAQAAAAAAAAABAP//AQAAAAAAAAABAP7/AQAAAAAAAAAAAP3/AQAAAAAAAAAAAPz/AQAAAAAAAAD///v/AQAAAAAAAAD///z/AQAAAAAAAAD+//3/AQAAAAAAAAD+//7/AQAAAAAAAAA=")
+tile_set = SubResource("TileSet_tlwt5")
