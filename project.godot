@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="stubborn-roots"
+run/main_scene="uid://6hkh651dwn7s"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
