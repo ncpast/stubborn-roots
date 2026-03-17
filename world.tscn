@@ -1,7 +1,10 @@
 [gd_scene format=4 uid="uid://6hkh651dwn7s"]
 
+[ext_resource type="Script" uid="uid://cw0d5d2c6cq08" path="res://world.gd" id="1_aqk2v"]
 [ext_resource type="Texture2D" uid="uid://c8kxfc7jp47en" path="res://assets/textures/tilemap_floor.png" id="1_f3sb7"]
 [ext_resource type="Texture2D" uid="uid://dxmblcqty8smd" path="res://assets/textures/basic_tree.png" id="1_fj7yv"]
+[ext_resource type="Script" uid="uid://xi3a0glmavnt" path="res://api_client.gd" id="4_036b0"]
+[ext_resource type="Texture2D" uid="uid://bgqubk365w6wg" path="res://assets/textures/money.png" id="5_036b0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fj7yv"]
 texture = ExtResource("1_f3sb7")
@@ -35,7 +38,15 @@ sources/0 = SubResource("TileSetAtlasSource_tlwt5")
 tile_shape = 1
 tile_size = Vector2i(88, 44)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dwbse"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
 [node name="World" type="Node2D" unique_id=58810820]
+script = ExtResource("1_aqk2v")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=354919931]
 texture_filter = 1
@@ -51,3 +62,39 @@ tile_set = SubResource("TileSet_aqk2v")
 position = Vector2(0, -11)
 tile_map_data = PackedByteArray("AAD8/+//AAAAAAAAAAD9/+7/AAAAAAAAAAD9/+//AAAAAAAAAAD+/+7/AAAAAAAAAAD+/+//AAAAAAAAAAD//+7/AAAAAAAAAAD//+//AAAAAAAAAAAAAO7/AAAAAAAAAAAAAO//AAAAAAAAAAABAO7/AAAAAAAAAAABAO//AAAAAAAAAAACAO//AAAAAAAAAAADAO7/AAAAAAAAAAADAO//AAAAAAAAAAAEAO7/AAAAAAAAAAAEAO//AAAAAAAAAAACAO7/AAAAAAAAAAAAAPD/AAAAAAAAAAD///D/AAAAAAAAAAD+//D/AAAAAAAAAAD9//D/AAAAAAAAAAD8/+7/AAAAAAAAAAD7/+//AAAAAAAAAAD7/+7/AAAAAAAAAAD6/+//AAAAAAAAAAD6/+7/AAAAAAAAAAD7//D/AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_fj7yv")
+
+[node name="APIClient" type="Node" parent="." unique_id=146758784]
+script = ExtResource("4_036b0")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1223324332]
+
+[node name="PanelContainer" type="PanelContainer" parent="HUD" unique_id=1213088341]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -95.0
+offset_top = 11.0
+offset_right = -12.0
+offset_bottom = 51.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_dwbse")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/PanelContainer" unique_id=1372404459]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="MoneyIcon" type="TextureRect" parent="HUD/PanelContainer/HBoxContainer" unique_id=818076749]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("5_036b0")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MoneyLabel" type="Label" parent="HUD/PanelContainer/HBoxContainer" unique_id=1125998157]
+layout_mode = 2
+theme_override_colors/font_color = Color(1.2032688e-08, 0.34716833, 4.3317675e-07, 1)
+theme_override_colors/font_outline_color = Color(0, 0.32097834, 1.92523e-07, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 20
+text = "
+"
