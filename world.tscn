@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cw0d5d2c6cq08" path="res://world.gd" id="1_aqk2v"]
 [ext_resource type="Texture2D" uid="uid://c8kxfc7jp47en" path="res://assets/textures/tilemap_floor.png" id="1_f3sb7"]
 [ext_resource type="Texture2D" uid="uid://dxmblcqty8smd" path="res://assets/textures/basic_tree.png" id="1_fj7yv"]
-[ext_resource type="Script" uid="uid://xi3a0glmavnt" path="res://api_client.gd" id="4_036b0"]
+[ext_resource type="Script" uid="uid://xi3a0glmavnt" path="res://player_data/data_handler.gd" id="4_036b0"]
 [ext_resource type="Texture2D" uid="uid://bgqubk365w6wg" path="res://assets/textures/money.png" id="5_036b0"]
 [ext_resource type="Script" uid="uid://c4c7o74agpgft" path="res://scripts/controls/camera_2d.gd" id="6_dwbse"]
 
