@@ -8,7 +8,6 @@
 *.translation
 
 # C++ / GDExtension binaries
-bin/
 gen/
 *.obj
 *.o
