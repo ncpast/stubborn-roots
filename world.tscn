@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://c8kxfc7jp47en" path="res://assets/textures/tilemap_floor.png" id="1_f3sb7"]
 [ext_resource type="Texture2D" uid="uid://dxmblcqty8smd" path="res://assets/textures/basic_tree.png" id="1_fj7yv"]
+[ext_resource type="Script" uid="uid://cw0d5d2c6cq08" path="res://world.gd" id="1_tlwt5"]
+[ext_resource type="Texture2D" uid="uid://bgqubk365w6wg" path="res://assets/textures/money.png" id="4_aqk2v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fj7yv"]
 texture = ExtResource("1_f3sb7")
@@ -35,7 +37,15 @@ sources/0 = SubResource("TileSetAtlasSource_tlwt5")
 tile_shape = 1
 tile_size = Vector2i(88, 44)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aqk2v"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+
 [node name="World" type="Node2D" unique_id=58810820]
+script = ExtResource("1_tlwt5")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=354919931]
 texture_filter = 1
@@ -51,3 +61,27 @@ tile_set = SubResource("TileSet_aqk2v")
 position = Vector2(0, -11)
 tile_map_data = PackedByteArray("AAD8/+//AAAAAAAAAAD9/+7/AAAAAAAAAAD9/+//AAAAAAAAAAD+/+7/AAAAAAAAAAD+/+//AAAAAAAAAAD//+7/AAAAAAAAAAD//+//AAAAAAAAAAAAAO7/AAAAAAAAAAAAAO//AAAAAAAAAAABAO7/AAAAAAAAAAABAO//AAAAAAAAAAACAO//AAAAAAAAAAADAO7/AAAAAAAAAAADAO//AAAAAAAAAAAEAO7/AAAAAAAAAAAEAO//AAAAAAAAAAACAO7/AAAAAAAAAAAAAPD/AAAAAAAAAAD///D/AAAAAAAAAAD+//D/AAAAAAAAAAD9//D/AAAAAAAAAAD8/+7/AAAAAAAAAAD7/+//AAAAAAAAAAD7/+7/AAAAAAAAAAD6/+//AAAAAAAAAAD6/+7/AAAAAAAAAAD7//D/AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_fj7yv")
+
+[node name="APIClient" type="APIClient" parent="." unique_id=381944824]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=819614343]
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer" unique_id=896892423]
+offset_left = 1052.0
+offset_top = 7.0
+offset_right = 1145.0
+offset_bottom = 52.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_aqk2v")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/PanelContainer" unique_id=1570025064]
+layout_mode = 2
+
+[node name="Money" type="TextureRect" parent="CanvasLayer/PanelContainer/HBoxContainer" unique_id=591372811]
+layout_mode = 2
+texture = ExtResource("4_aqk2v")
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer/HBoxContainer" unique_id=37357396]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.34279114, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 20
