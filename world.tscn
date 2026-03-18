@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cw0d5d2c6cq08" path="res://world.gd" id="1_aqk2v"]
 [ext_resource type="Texture2D" uid="uid://c8kxfc7jp47en" path="res://assets/textures/tilemap_floor.png" id="1_f3sb7"]
 [ext_resource type="Texture2D" uid="uid://dxmblcqty8smd" path="res://assets/textures/basic_tree.png" id="1_fj7yv"]
+[ext_resource type="Script" uid="uid://c2pfg8tl145y6" path="res://canvas_modulate.gd" id="3_pkg7o"]
 [ext_resource type="Script" uid="uid://xi3a0glmavnt" path="res://player_data/data_handler.gd" id="4_036b0"]
 [ext_resource type="Texture2D" uid="uid://bgqubk365w6wg" path="res://assets/textures/money.png" id="5_036b0"]
 [ext_resource type="Script" uid="uid://c4c7o74agpgft" path="res://scripts/controls/camera_2d.gd" id="6_dwbse"]
@@ -13,6 +14,10 @@ corner_radius_top_left = 100
 corner_radius_top_right = 100
 corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
+
+[sub_resource type="Gradient" id="Gradient_pkg7o"]
+offsets = PackedFloat32Array(0, 0.1, 0.2, 0.5, 0.8, 0.9, 1)
+colors = PackedColorArray(0.07450981, 0.08627451, 0.16862746, 1, 0.07450981, 0.08627451, 0.16862746, 1, 1, 0.6784314, 0.49019608, 1, 1, 1, 1, 1, 0.6117647, 0.36078432, 0.56078434, 1, 0.07450981, 0.08627451, 0.16862746, 1, 0.07450981, 0.08627451, 0.16862746, 1)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fj7yv"]
 texture = ExtResource("1_f3sb7")
@@ -81,6 +86,10 @@ theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 20
 text = "
 "
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=105694393]
+script = ExtResource("3_pkg7o")
+gradient = SubResource("Gradient_pkg7o")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=354919931]
 texture_filter = 1
