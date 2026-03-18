@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cw0d5d2c6cq08" path="res://world.gd" id="1_aqk2v"]
 [ext_resource type="Texture2D" uid="uid://c8kxfc7jp47en" path="res://assets/textures/tilemap_floor.png" id="1_f3sb7"]
 [ext_resource type="Texture2D" uid="uid://dxmblcqty8smd" path="res://assets/textures/basic_tree.png" id="1_fj7yv"]
-[ext_resource type="Script" uid="uid://c2pfg8tl145y6" path="res://canvas_modulate.gd" id="3_pkg7o"]
+[ext_resource type="Script" uid="uid://c2pfg8tl145y6" path="res://scripts/canvas_modulate.gd" id="3_pkg7o"]
 [ext_resource type="Script" uid="uid://xi3a0glmavnt" path="res://player_data/data_handler.gd" id="4_036b0"]
 [ext_resource type="Texture2D" uid="uid://bgqubk365w6wg" path="res://assets/textures/money.png" id="5_036b0"]
 [ext_resource type="Script" uid="uid://c4c7o74agpgft" path="res://scripts/controls/camera_2d.gd" id="6_dwbse"]
@@ -115,49 +115,7 @@ zoom = Vector2(2, 2)
 script = ExtResource("6_dwbse")
 
 [node name="StreetLight" type="PointLight2D" parent="." unique_id=1673432399 groups=["lights"]]
-position = Vector2(-306, -46)
-color = Color(0.69408804, 0.6795826, 3.85046e-07, 1)
-energy = 2.6
-texture = ExtResource("7_pkg7o")
-texture_scale = 1.26
-
-[node name="StreetLight2" type="PointLight2D" parent="." unique_id=1969378217 groups=["lights"]]
-position = Vector2(-146, -101)
-color = Color(0.69408804, 0.6795826, 3.85046e-07, 1)
-energy = 2.6
-texture = ExtResource("7_pkg7o")
-texture_scale = 1.26
-
-[node name="StreetLight3" type="PointLight2D" parent="." unique_id=1377083340 groups=["lights"]]
-position = Vector2(183, -87)
-color = Color(0.69408804, 0.6795826, 3.85046e-07, 1)
-energy = 2.6
-texture = ExtResource("7_pkg7o")
-texture_scale = 1.26
-
-[node name="StreetLight4" type="PointLight2D" parent="." unique_id=691558457 groups=["lights"]]
-position = Vector2(16, -149)
-color = Color(0.69408804, 0.6795826, 3.85046e-07, 1)
-energy = 2.6
-texture = ExtResource("7_pkg7o")
-texture_scale = 1.26
-
-[node name="StreetLight5" type="PointLight2D" parent="." unique_id=898846748 groups=["lights"]]
-position = Vector2(179, 87)
-color = Color(0.69408804, 0.6795826, 3.85046e-07, 1)
-energy = 2.6
-texture = ExtResource("7_pkg7o")
-texture_scale = 1.26
-
-[node name="StreetLight6" type="PointLight2D" parent="." unique_id=737887048 groups=["lights"]]
-position = Vector2(13, 112)
-color = Color(0.69408804, 0.6795826, 3.85046e-07, 1)
-energy = 2.6
-texture = ExtResource("7_pkg7o")
-texture_scale = 1.26
-
-[node name="StreetLight7" type="PointLight2D" parent="." unique_id=866021900 groups=["lights"]]
-position = Vector2(-152, 98)
+position = Vector2(-122, 34)
 color = Color(0.69408804, 0.6795826, 3.85046e-07, 1)
 energy = 2.6
 texture = ExtResource("7_pkg7o")
