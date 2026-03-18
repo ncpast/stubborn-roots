@@ -13,3 +13,7 @@ func _ready() -> void:
 func _on_money_updated(new_amount: int) -> void:
 	money_label.text = str(new_amount)
 	print("UI Auto-Updated to: ", new_amount)
+
+
+func _on_button_pressed() -> void:
+	pass # Replace with function body.

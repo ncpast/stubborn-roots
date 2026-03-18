@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bgqubk365w6wg" path="res://assets/textures/money.png" id="5_036b0"]
 [ext_resource type="Script" uid="uid://c4c7o74agpgft" path="res://scripts/controls/camera_2d.gd" id="6_dwbse"]
 [ext_resource type="Texture2D" uid="uid://ds4j3uske6jw4" path="res://icon.svg" id="7_pkg7o"]
+[ext_resource type="PackedScene" uid="uid://dlqs4lxtvd6eq" path="res://shop.tscn" id="9_ioo17"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dwbse"]
 bg_color = Color(0.21710122, 0.21710122, 0.21710122, 1)
@@ -118,3 +119,5 @@ color = Color(0.69408804, 0.6795826, 3.85046e-07, 1)
 energy = 2.6
 texture = ExtResource("7_pkg7o")
 texture_scale = 1.26
+
+[node name="Shop" parent="." unique_id=295683993 instance=ExtResource("9_ioo17")]
