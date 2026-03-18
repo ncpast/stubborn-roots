@@ -23,7 +23,7 @@ func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void
 			currentmenu = shopmenu.instantiate()
 			add_child(currentmenu)
 
-func _input(event: InputEvent) -> void:
+func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if currentmenu !=null and mousehover == false:
 			currentmenu.queue_free()

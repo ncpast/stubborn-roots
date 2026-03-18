@@ -1,4 +1,7 @@
 {
   "money": 5000,
-  "seed1": 2
+  "seed1": 2,
+  "seed2": 3,
+  "seed1price": 100,
+  "seed2price": 250
 }
