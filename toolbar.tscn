@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c5rvyivxo6xi0"]
+
+[ext_resource type="Script" uid="uid://c3txalamlmyem" path="res://scripts/state_changer.gd" id="1_har8n"]
+
+[node name="Toolbar" type="Node2D" unique_id=1918760052]
+script = ExtResource("1_har8n")
+
+[node name="stateB" type="Button" parent="." unique_id=395757338]
+offset_right = 30.0
+offset_bottom = 31.0
+text = "B"
+metadata/currently_equipped = "B"
+
+[node name="stateA" type="Button" parent="." unique_id=656658421]
+offset_left = -30.0
+offset_bottom = 31.0
+text = "A"
+metadata/currently_equipped = "A"

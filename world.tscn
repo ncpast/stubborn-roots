@@ -3,12 +3,13 @@
 [ext_resource type="Script" uid="uid://cw0d5d2c6cq08" path="res://world.gd" id="1_aqk2v"]
 [ext_resource type="Texture2D" uid="uid://c8kxfc7jp47en" path="res://assets/textures/tilemap_floor.png" id="1_f3sb7"]
 [ext_resource type="Texture2D" uid="uid://dxmblcqty8smd" path="res://assets/textures/basic_tree.png" id="1_fj7yv"]
-[ext_resource type="Script" uid="uid://c2pfg8tl145y6" path="res://scripts/canvas_modulate.gd" id="3_pkg7o"]
+[ext_resource type="Script" path="res://scripts/canvas_modulate.gd" id="3_pkg7o"]
 [ext_resource type="Script" uid="uid://xi3a0glmavnt" path="res://player_data/data_handler.gd" id="4_036b0"]
 [ext_resource type="Texture2D" uid="uid://bgqubk365w6wg" path="res://assets/textures/money.png" id="5_036b0"]
 [ext_resource type="Script" uid="uid://c4c7o74agpgft" path="res://scripts/controls/camera_2d.gd" id="6_dwbse"]
 [ext_resource type="Texture2D" uid="uid://ds4j3uske6jw4" path="res://icon.svg" id="7_pkg7o"]
 [ext_resource type="PackedScene" uid="uid://dlqs4lxtvd6eq" path="res://shop.tscn" id="9_ioo17"]
+[ext_resource type="PackedScene" uid="uid://c5rvyivxo6xi0" path="res://toolbar.tscn" id="10_wse8f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dwbse"]
 bg_color = Color(0.21710122, 0.21710122, 0.21710122, 1)
@@ -114,6 +115,7 @@ zoom = Vector2(2, 2)
 script = ExtResource("6_dwbse")
 
 [node name="StreetLight" type="PointLight2D" parent="." unique_id=1673432399 groups=["lights"]]
+visible = false
 position = Vector2(-122, 34)
 color = Color(0.69408804, 0.6795826, 3.85046e-07, 1)
 energy = 2.6
@@ -121,3 +123,6 @@ texture = ExtResource("7_pkg7o")
 texture_scale = 1.26
 
 [node name="Shop" parent="." unique_id=295683993 instance=ExtResource("9_ioo17")]
+
+[node name="Toolbar" parent="." unique_id=1918760052 instance=ExtResource("10_wse8f")]
+position = Vector2(-108, 35)
