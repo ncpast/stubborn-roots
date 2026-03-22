@@ -10,6 +10,13 @@ var max_x = 250
 var min_y = -250
 var max_y = 250
 
+func _process(delta: float) -> void:
+	if Input.is_key_pressed(KEY_W):
+		zoom = zoom + Vector2(0.05, 0.05)
+	if Input.is_key_pressed(KEY_S):
+		zoom = zoom - Vector2(0.05, 0.05)
+	zoom = zoom.clamp(Vector2(1.2, 1.2), Vector2(4.5, 4.5))
+
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_RIGHT:
