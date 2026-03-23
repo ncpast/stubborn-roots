@@ -7,6 +7,7 @@
 size = Vector2(127, 56)
 
 [node name="ShopSellMenu" type="Node2D" unique_id=2038480755]
+z_index = 100
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1267377512]
 scale = Vector2(1, 0.42578128)

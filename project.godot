@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 PlayerState="*uid://qe5mur2oobys"
 WorldData="*uid://c730f87i18ls4"
 
+[dotnet]
+
+project/assembly_name="stubborn-roots"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

@@ -8,6 +8,7 @@
 size = Vector2(130, 130)
 
 [node name="Shop" type="Node2D" unique_id=295683993]
+z_index = 99
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1418384130]
 texture = ExtResource("1_e7rdd")
