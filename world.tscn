@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bgqubk365w6wg" path="res://assets/textures/money.png" id="5_036b0"]
 [ext_resource type="Script" uid="uid://c4c7o74agpgft" path="res://scripts/controls/camera_2d.gd" id="6_dwbse"]
 [ext_resource type="Texture2D" uid="uid://3f0pu3rknodo" path="res://assets/textures/fence.png" id="6_ioo17"]
-[ext_resource type="PackedScene" uid="uid://c5rvyivxo6xi0" path="res://toolbar.tscn" id="9_wse8f"]
+[ext_resource type="PackedScene" uid="uid://c5rvyivxo6xi0" path="res://assets/prefabs/toolbar.tscn" id="9_wse8f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dwbse"]
 bg_color = Color(0.21710122, 0.21710122, 0.21710122, 1)
