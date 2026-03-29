@@ -7,6 +7,5 @@ func _ready() -> void:
 			child.pressed.connect(_change_player_status.bind(player_state))
 	
 func _change_player_status(new_status: String) -> void:
-	PlayerState.tool = new_status
-	if PlayerState.tool == new_status:
-		print(new_status)
+	PlayerState.update_tool(new_status)
+	print(new_status)

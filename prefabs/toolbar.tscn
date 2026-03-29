@@ -30,36 +30,41 @@ script = ExtResource("1_har8n")
 [node name="state1" type="Button" parent="HBoxContainer" unique_id=1907954939]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-text = "A"
+theme_override_font_sizes/font_size = 30
+text = "🪏"
 clip_text = true
-metadata/tool = "A"
+metadata/tool = "shovel"
 
 [node name="state2" type="Button" parent="HBoxContainer" unique_id=355075860]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-text = "B"
+theme_override_font_sizes/font_size = 30
+text = "🪓"
 clip_text = true
-metadata/tool = "B"
+metadata/tool = "axe"
 
 [node name="state3" type="Button" parent="HBoxContainer" unique_id=1705060944]
 clip_contents = true
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-text = "C"
+theme_override_font_sizes/font_size = 30
+text = "🔨"
 autowrap_trim_flags = 0
 clip_text = true
-metadata/tool = "C"
+metadata/tool = "build"
 
 [node name="state4" type="Button" parent="HBoxContainer" unique_id=1191056093]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-text = "D"
+theme_override_font_sizes/font_size = 30
+text = "🪣"
 clip_text = true
-metadata/tool = "D"
+metadata/tool = "water"
 
 [node name="state5" type="Button" parent="HBoxContainer" unique_id=1391233581]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-text = "E"
+theme_override_font_sizes/font_size = 30
+text = "⛏️"
 clip_text = true
-metadata/tool = "E"
+metadata/tool = "hoe"

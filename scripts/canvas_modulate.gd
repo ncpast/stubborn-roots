@@ -1,13 +1,13 @@
 extends CanvasModulate
 
 @export_group("Cycle Durations")
-@export var day_duration: float = 20.0
-@export var night_duration: float = 10.0
+@export var day_duration: float = 20.0 * 10
+@export var night_duration: float = 10.0 * 10
 
 @export_group("Visuals")
 @export var gradient: Gradient
 
-var time: float = 0.0
+var time: float = 0.5
 var is_day: bool = true
 
 func _ready() -> void:
