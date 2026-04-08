@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dr8mc3kfxjwtd"]
+
+[ext_resource type="Script" uid="uid://bmxpc4juvlciq" path="res://scripts/seedlist.gd" id="1_426ow"]
+[ext_resource type="PackedScene" uid="uid://dootlmibrhyuo" path="res://assets/prefabs/seedlistitem.tscn" id="1_m5nfi"]
+
+[node name="VBoxContainer" type="VBoxContainer" unique_id=1270488609]
+custom_minimum_size = Vector2(325, 400)
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/separation = 5
+script = ExtResource("1_426ow")
+list_item = ExtResource("1_m5nfi")
