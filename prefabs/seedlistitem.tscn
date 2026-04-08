@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://b105c6aqvbs6r"]
+
+[ext_resource type="Script" path="res://scripts/parseseedinfo.gd" id="1_euirx"]
+[ext_resource type="Texture2D" uid="uid://ds4j3uske6jw4" path="res://icon.svg" id="1_v0phw"]
+
+[node name="Button" type="Button" unique_id=615629959]
+custom_minimum_size = Vector2(0, 75)
+size_flags_horizontal = 3
+size_flags_vertical = 0
+script = ExtResource("1_euirx")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=809467148]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 62.0
+offset_bottom = 62.0
+texture = ExtResource("1_v0phw")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=939815681]
+layout_mode = 0
+offset_left = 73.0
+offset_right = 485.0
+offset_bottom = 77.0
+theme_override_constants/separation = 0
+
+[node name="Name" type="Label" parent="VBoxContainer" unique_id=508043225]
+layout_mode = 2
+text = "name"
+autowrap_trim_flags = 0
+
+[node name="Price" type="Label" parent="VBoxContainer" unique_id=835364634]
+layout_mode = 2
+text = "$$$"
+
+[node name="Description" type="Label" parent="VBoxContainer" unique_id=23241243]
+layout_mode = 2
+text = "about seed"
