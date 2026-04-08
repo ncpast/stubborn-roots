@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://brks57umhb6fs"]
 
 [ext_resource type="PackedScene" uid="uid://dr8mc3kfxjwtd" path="res://assets/prefabs/seedlist.tscn" id="1_0cj1k"]
+[ext_resource type="Texture2D" uid="uid://ds4j3uske6jw4" path="res://icon.svg" id="1_65rq8"]
 [ext_resource type="Script" uid="uid://t1owirdxjwhv" path="res://scripts/seedchoiceinitiate.gd" id="1_svcnt"]
 
 [node name="Control" type="Control" unique_id=1982022041]
@@ -24,6 +25,7 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-text = "A"
+icon = ExtResource("1_65rq8")
+expand_icon = true
 script = ExtResource("1_svcnt")
 seedlist = ExtResource("1_0cj1k")
