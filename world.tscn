@@ -36,16 +36,110 @@ tile_shape = 1
 tile_size = Vector2i(44, 22)
 sources/1 = SubResource("TileSetAtlasSource_fj7yv")
 
+<<<<<<< Updated upstream
+=======
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ic0uy"]
+texture = ExtResource("6_gbfbk")
+texture_region_size = Vector2i(46, 51)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 7)
+0:0/0/z_index = 2
+1:0/0 = 0
+1:0/0/texture_origin = Vector2i(0, 7)
+1:0/0/z_index = 2
+2:0/0 = 0
+2:0/0/texture_origin = Vector2i(0, 7)
+2:0/0/z_index = 2
+3:0/0 = 0
+3:0/0/texture_origin = Vector2i(0, 7)
+3:0/0/z_index = 2
+
+[sub_resource type="TileSet" id="TileSet_k3n1d"]
+tile_shape = 1
+tile_size = Vector2i(44, 22)
+sources/0 = SubResource("TileSetAtlasSource_ic0uy")
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wse8f"]
+polygon = PackedVector2Array(-5.7831497, -18.506073, -6.5590425, -7.720479, -15.040994, -3.4795032, -4.2409744, 3.0843468, 13.3446, -4.3277, 5.1710873, -8.414456, 5.7831497, -17.734985)
+
+>>>>>>> Stashed changes
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tlwt5"]
 texture = ExtResource("1_fj7yv")
 texture_region_size = Vector2i(100, 100)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, 39)
 0:0/0/z_index = 2
+0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_wse8f")
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ic0uy"]
+polygon = PackedVector2Array(0, 11, 22, 0, 18.932587, -1.533707, -0.35971642, 6.834633, -18.357037, -1.8214817, -22, 0)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_k3n1d"]
+polygon = PackedVector2Array(21.827991, -3.5533943, 19.695957, -2.74119, 20.156763, -0.9216181, 18.376125, 0.30457592, 18.045034, -1.977483, 16.244087, -1.1167812, 16.142563, 1.2183065, 14.213576, 2.436613, 14.213576, 0.40610218, 12.08154, 1.5228834, 11.8784895, 3.1472921, 10.1525545, 4.467124, 9.644927, 2.436613, 8.122044, 3.0457659, 7.7159414, 5.2793283, 5.9900074, 6.2945833, 5.6854305, 4.5686493, 4.061022, 5.076277, 4.061022, 7.4113646, 2.1320372, 8.731196, 2.030511, 6.2945833, -0.81220436, 7.8174667, -0.91372967, 5.888481, 21.827993, -5.6854305)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2o6r5"]
+polygon = PackedVector2Array(0, 11, -0.35971642, 6.834633, -18.357037, -1.8214817, -22, 0)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_70uel"]
+polygon = PackedVector2Array(0, -11, 22, 0, 0, 11, -3.6086216, 9.195689, 14.928276, -0.17985725, -2.8891869, -9.555407)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_hiqwa"]
+polygon = PackedVector2Array(-22, 0, -19.364246, 1.3178772, 0.17985916, -8.45336, 18.7887, 1.60565, 22, 0, 0, -11)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2u3nc"]
+polygon = PackedVector2Array(-22, 0, -19.364246, 1.3178772, 0.17985916, -8.45336, 0, -11)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_udxuc"]
+polygon = PackedVector2Array(0, -11, -22, 0, 0, 11, 3.0330741, 9.483463, -14.748415, 0.17985916, 2.673357, -9.6633215)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ikiii"]
+polygon = PackedVector2Array(0, -11, -2.3855813, -9.807209, 19.148415, 1.4257927, 22, 0)
+
+<<<<<<< Updated upstream
+=======
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wse8f"]
+texture = ExtResource("6_ioo17")
+margins = Vector2i(22, 12)
+separation = Vector2i(2, 0)
+texture_region_size = Vector2i(44, 39)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 2)
+0:0/0/z_index = 1
+0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_ic0uy")
+1:0/0 = 0
+1:0/0/texture_origin = Vector2i(0, 2)
+1:0/0/z_index = 1
+1:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_2o6r5")
+2:0/0 = 0
+2:0/0/texture_origin = Vector2i(0, 2)
+2:0/0/z_index = 1
+2:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_hiqwa")
+3:0/0 = 0
+3:0/0/texture_origin = Vector2i(0, 2)
+3:0/0/z_index = 1
+3:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_2u3nc")
+4:0/0 = 0
+4:0/0/texture_origin = Vector2i(0, 2)
+4:0/0/z_index = 1
+4:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_udxuc")
+5:0/0 = 0
+5:0/0/texture_origin = Vector2i(0, 2)
+5:0/0/z_index = 1
+5:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_ikiii")
+0:1/0 = 0
+0:1/0/texture_origin = Vector2i(0, 2)
+0:1/0/z_index = 1
+0:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_k3n1d")
+1:1/0 = 0
+1:1/0/texture_origin = Vector2i(0, 2)
+1:1/0/z_index = 1
+1:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_70uel")
+
+>>>>>>> Stashed changes
 [sub_resource type="TileSet" id="TileSet_aqk2v"]
 tile_shape = 1
 tile_size = Vector2i(44, 22)
+occlusion_layer_0/light_mask = 1
 sources/0 = SubResource("TileSetAtlasSource_tlwt5")
 
 [sub_resource type="TileSet" id="TileSet_fj7yv"]
@@ -115,8 +209,20 @@ zoom = Vector2(2, 2)
 script = ExtResource("6_dwbse")
 
 [node name="StreetLight" type="PointLight2D" parent="." unique_id=1673432399 groups=["lights"]]
+<<<<<<< Updated upstream
 position = Vector2(-122, 34)
 color = Color(0.69408804, 0.6795826, 3.85046e-07, 1)
 energy = 2.6
 texture = ExtResource("7_pkg7o")
+=======
+position = Vector2(0, 1)
+color = Color(0.81834406, 0.8156989, 0.65773505, 1)
+energy = 2.6
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+shadow_filter = 1
+shadow_filter_smooth = 3.9
+texture = SubResource("GradientTexture2D_ioo17")
+>>>>>>> Stashed changes
 texture_scale = 1.26
+height = 225.0
