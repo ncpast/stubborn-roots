@@ -6,8 +6,10 @@
 [node name="Control" type="Control" unique_id=1982022041]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 60.0
+offset_bottom = 60.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2070278764]
 custom_minimum_size = Vector2(500, 0)
