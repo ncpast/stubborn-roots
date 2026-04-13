@@ -58,12 +58,40 @@ tile_shape = 1
 tile_size = Vector2i(44, 22)
 sources/0 = SubResource("TileSetAtlasSource_ic0uy")
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ic0uy"]
+polygon = PackedVector2Array(-6.372616, -17.524693, -7.458856, -7.2705717, -14.468734, -3.765633, -0.31863022, 1.9117851, 12.939302, -4.530349, 4.7823563, -8.608822, 5.098091, -19.117846)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tlwt5"]
 texture = ExtResource("1_fj7yv")
 texture_region_size = Vector2i(100, 100)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, 39)
 0:0/0/z_index = 2
+0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_ic0uy")
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_k3n1d"]
+polygon = PackedVector2Array(-22, 0, -18.64481, -1.6775951, -0.17985725, 5.75548, 17.709547, -2.1452265, 22, 0, 0, 11)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2o6r5"]
+polygon = PackedVector2Array(-2.6014118, 9.699294, 0, 11, 22, 0, 18.860641, -1.5696789)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_70uel"]
+polygon = PackedVector2Array(-22, 0, -18.64481, -1.6775951, 4.040283, 8.979858, 0, 11)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_hiqwa"]
+polygon = PackedVector2Array(0, -11, 22, 0, 0, 11, -3.5366764, 9.231662, 14.928276, -0.5395756, -3.2489033, -9.375548)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2u3nc"]
+polygon = PackedVector2Array(-22, 0, -19.076471, 1.4617646, -0.35971642, -7.913783, 19.22036, 1.3898201, 22, 0, 0, -11)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_udxuc"]
+polygon = PackedVector2Array(-22, 0, -19.076471, 1.4617646, -0.35971642, -7.913783, 0, -11)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ikiii"]
+polygon = PackedVector2Array(0, -11, -19.508133, -1.2459335, 1.4503182, 10.274841, 4.112226, 8.943887, -14.568556, -1.4388695, 2.2416954, -9.879152)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_cbp6q"]
+polygon = PackedVector2Array(0, -11, -2.6733558, -9.663322, 19.22036, 1.3898201, 22, 0)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wse8f"]
 texture = ExtResource("6_ioo17")
@@ -73,31 +101,40 @@ texture_region_size = Vector2i(44, 39)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, 2)
 0:0/0/z_index = 1
+0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_k3n1d")
 1:0/0 = 0
 1:0/0/texture_origin = Vector2i(0, 2)
 1:0/0/z_index = 1
+1:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_70uel")
 2:0/0 = 0
 2:0/0/texture_origin = Vector2i(0, 2)
 2:0/0/z_index = 1
+2:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_2u3nc")
 3:0/0 = 0
 3:0/0/texture_origin = Vector2i(0, 2)
 3:0/0/z_index = 1
+3:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_udxuc")
 4:0/0 = 0
 4:0/0/texture_origin = Vector2i(0, 2)
 4:0/0/z_index = 1
+4:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_ikiii")
 5:0/0 = 0
 5:0/0/texture_origin = Vector2i(0, 2)
 5:0/0/z_index = 1
+5:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_cbp6q")
 0:1/0 = 0
 0:1/0/texture_origin = Vector2i(0, 2)
 0:1/0/z_index = 1
+0:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_2o6r5")
 1:1/0 = 0
 1:1/0/texture_origin = Vector2i(0, 2)
 1:1/0/z_index = 1
+1:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_hiqwa")
 
 [sub_resource type="TileSet" id="TileSet_aqk2v"]
 tile_shape = 1
 tile_size = Vector2i(44, 22)
+occlusion_layer_0/light_mask = 1
 sources/0 = SubResource("TileSetAtlasSource_tlwt5")
 sources/1 = SubResource("TileSetAtlasSource_wse8f")
 
@@ -191,7 +228,12 @@ zoom = Vector2(2, 2)
 script = ExtResource("6_dwbse")
 
 [node name="StreetLight" type="PointLight2D" parent="." unique_id=1673432399 groups=["lights"]]
+position = Vector2(-1, 4)
 color = Color(0.81834406, 0.8156989, 0.65773505, 1)
 energy = 2.6
+shadow_enabled = true
+shadow_color = Color(0.04303915, 0.043039158, 0.04303913, 1)
+shadow_filter = 1
+shadow_filter_smooth = 4.4
 texture = SubResource("GradientTexture2D_ioo17")
 texture_scale = 1.26
