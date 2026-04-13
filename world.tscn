@@ -117,6 +117,7 @@ fill_to = Vector2(1, 0.50289017)
 metadata/_snap_count = 2
 
 [node name="World" type="Node2D" unique_id=58810820]
+position = Vector2(0, -1)
 script = ExtResource("1_gbfbk")
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1223324332]
