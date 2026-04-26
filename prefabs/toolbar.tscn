@@ -27,6 +27,14 @@ grow_vertical = 0
 alignment = 1
 script = ExtResource("1_har8n")
 
+[node name="state6" type="Button" parent="HBoxContainer" unique_id=45570286]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "🌱"
+clip_text = true
+metadata/tool = "plant"
+
 [node name="state1" type="Button" parent="HBoxContainer" unique_id=1907954939]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
@@ -35,13 +43,21 @@ text = "🪏"
 clip_text = true
 metadata/tool = "shovel"
 
-[node name="state2" type="Button" parent="HBoxContainer" unique_id=355075860]
+[node name="state5" type="Button" parent="HBoxContainer" unique_id=1391233581]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "🪓"
+text = "⛏️"
 clip_text = true
-metadata/tool = "axe"
+metadata/tool = "hoe"
+
+[node name="state4" type="Button" parent="HBoxContainer" unique_id=1191056093]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "✋"
+clip_text = true
+metadata/tool = "gather"
 
 [node name="state3" type="Button" parent="HBoxContainer" unique_id=1705060944]
 clip_contents = true
@@ -53,18 +69,10 @@ autowrap_trim_flags = 0
 clip_text = true
 metadata/tool = "build"
 
-[node name="state4" type="Button" parent="HBoxContainer" unique_id=1191056093]
+[node name="state2" type="Button" parent="HBoxContainer" unique_id=355075860]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "🪣"
+text = "🪓"
 clip_text = true
-metadata/tool = "water"
-
-[node name="state5" type="Button" parent="HBoxContainer" unique_id=1391233581]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "⛏️"
-clip_text = true
-metadata/tool = "hoe"
+metadata/tool = "axe"

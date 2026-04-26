@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 PlayerState="*uid://qe5mur2oobys"
 WorldData="*uid://c730f87i18ls4"
 SeedInfo="*uid://dxofj6yxw7rkh"
+GrowthManager="*uid://b3hjuab2ja6hk"
 
 [dotnet]
 

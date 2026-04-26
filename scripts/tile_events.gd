@@ -42,8 +42,15 @@ func _process(_delta: float) -> void:
 		var tile_pos = highlight_layer.local_to_map(world_pos)
 		if tile_pos != last_hover_pos:
 			highlight_layer.erase_cell(last_hover_pos)
-			highlight_layer.set_cell(tile_pos, 0, Vector2i(0, 0))
+			highlight_layer.set_cell(tile_pos, PlayerState.selected_source_id, PlayerState.selected_tile)
 			last_hover_pos = tile_pos
+
+func _add_to_inventory(item: String, amount: int) -> void:
+	if PlayerState.inventory.has(item):
+		PlayerState.inventory[item] += amount
+	else:
+		PlayerState.inventory[item] = amount
+	print("Inventory: ", PlayerState.inventory)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -52,8 +59,16 @@ func _unhandled_input(event: InputEvent) -> void:
 			var world_pos = get_global_mouse_position()
 			var tile_pos = tilemap.local_to_map(world_pos)
 			print("Tile: ", tile_pos, "; Mode: ", PlayerState.tool, "; Space: ", tilemap.name)
-			if PlayerState.tool == "build":
+			if PlayerState.tool == "plant":
 				if tilemap.get_cell_source_id(tile_pos) == -1:
-					tilemap.set_cell(tile_pos, 0, Vector2i(0, 0))
+					tilemap.set_cell(tile_pos, PlayerState.selected_source_id, PlayerState.selected_tile)
+					PlayerState.planted_tiles[tile_pos] = { "stage": 0, "time": 0.0, "tilemap": tilemap, "growth_time": 2 }
 			elif PlayerState.tool == "axe":
 				tilemap.erase_cell(tile_pos)
+			elif PlayerState.tool == "gather":
+				var source_id = tilemap.get_cell_source_id(tile_pos)
+				var atlas_coord = tilemap.get_cell_atlas_coords(tile_pos)
+				if source_id != -1 and atlas_coord == Vector2i(3, 0):
+					tilemap.erase_cell(tile_pos)
+					PlayerState.planted_tiles.erase(tile_pos)
+					_add_to_inventory("wheat", 1)
