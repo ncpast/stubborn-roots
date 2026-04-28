@@ -9,7 +9,7 @@ func _ready() -> void:
 	_update_highlight()
 
 func _update_highlight() -> void:
-	if PlayerState.tool == "build":
+	if PlayerState.tool == "build" || PlayerState.tool == "plant":
 		_create_highlight()
 	else:
 		_delete_highlight()
@@ -37,7 +37,7 @@ func _on_tool_changed() -> void:
 	_update_highlight()
 
 func _process(_delta: float) -> void:
-	if highlight_layer and PlayerState.tool == "build":
+	if highlight_layer and (PlayerState.tool == "plant" || PlayerState.tool == "build"):
 		var world_pos = get_global_mouse_position()
 		var tile_pos = highlight_layer.local_to_map(world_pos)
 		if tile_pos != last_hover_pos:
@@ -55,14 +55,22 @@ func _add_to_inventory(item: String, amount: int) -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			var tilemap = get_node(PlayerState.tool_space)
+			var tilemap: TileMapLayer = get_node(PlayerState.tool_space)
 			var world_pos = get_global_mouse_position()
 			var tile_pos = tilemap.local_to_map(world_pos)
-			print("Tile: ", tile_pos, "; Mode: ", PlayerState.tool, "; Space: ", tilemap.name)
-			if PlayerState.tool == "plant":
-				if tilemap.get_cell_source_id(tile_pos) == -1:
-					tilemap.set_cell(tile_pos, PlayerState.selected_source_id, PlayerState.selected_tile)
-					PlayerState.planted_tiles[tile_pos] = { "stage": 0, "time": 0.0, "tilemap": tilemap, "growth_time": 2 }
+			
+			var terrain_map: TileMapLayer = get_node(PlayerState.terrain_map)
+			var terrain_source_id = terrain_map.get_cell_source_id(tile_pos)
+			var terrain_atlas = terrain_map.get_cell_atlas_coords(tile_pos)
+			var can_be_planted: bool = terrain_source_id == 1 && terrain_atlas == Vector2i(0, 1)
+			
+			#print("Tile: ", tile_pos, "; Mode: ", PlayerState.tool, "; Space: ", tilemap.name)
+			
+			if PlayerState.tool == "plant" && can_be_planted:
+				match tilemap.get_cell_source_id(tile_pos):
+					-1:
+						tilemap.set_cell(tile_pos, PlayerState.selected_source_id, PlayerState.selected_tile)
+						PlayerState.planted_tiles[tile_pos] = { "stage": 0, "time": 0.0, "tilemap": tilemap, "growth_time": 2 }
 			elif PlayerState.tool == "axe":
 				tilemap.erase_cell(tile_pos)
 			elif PlayerState.tool == "gather":
@@ -72,3 +80,7 @@ func _unhandled_input(event: InputEvent) -> void:
 					tilemap.erase_cell(tile_pos)
 					PlayerState.planted_tiles.erase(tile_pos)
 					_add_to_inventory("wheat", 1)
+					terrain_map.set_cell(tile_pos, 1, Vector2i(0, 3)) # replace with dirt
+			elif PlayerState.tool == "shovel":
+				if terrain_source_id == 1 && terrain_atlas == Vector2i(0, 3):
+					terrain_map.set_cell(tile_pos, 1, Vector2i(0, 1));

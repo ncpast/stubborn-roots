@@ -2,8 +2,9 @@ extends Node
 signal tool_space_changed
 signal tool_changed
 
-var tool = "build"
+var tool = "none"
 var tool_space = "terrain/crops"
+var terrain_map = "terrain"
 
 var selected_tile = Vector2i(0, 0)
 var selected_source_id = 0
