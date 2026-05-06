@@ -4,14 +4,9 @@ extends Button
 var currentlist: Node = null
 
 func _pressed() -> void:
-	if currentlist != null:
-		
+	if is_instance_valid(currentlist):
 		currentlist.queue_free()
 		currentlist = null
-		get_parent().remove_child(currentlist)
-		print(currentlist)
-	
 	else:
 		currentlist = seedlist.instantiate()
 		get_parent().add_child(currentlist)
-		print(currentlist)

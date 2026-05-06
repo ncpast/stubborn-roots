@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b105c6aqvbs6r"]
 
-[ext_resource type="Script" path="res://scripts/parseseedinfo.gd" id="1_euirx"]
+[ext_resource type="Script" uid="uid://c06lfeiqbineq" path="res://scripts/shops/parseseedinfo.gd" id="1_euirx"]
 [ext_resource type="Texture2D" uid="uid://ds4j3uske6jw4" path="res://icon.svg" id="1_v0phw"]
 
 [node name="Button" type="Button" unique_id=615629959]

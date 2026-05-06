@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c7ttfrw4otp22"]
 
-[ext_resource type="Script" uid="uid://bmxpc4juvlciq" path="res://scripts/seedlist.gd" id="1_426ow"]
+[ext_resource type="Script" uid="uid://bmxpc4juvlciq" path="res://scripts/shops/seedlist.gd" id="1_426ow"]
 [ext_resource type="PackedScene" uid="uid://b105c6aqvbs6r" path="res://prefabs/seedlistitem.tscn" id="2_qkg70"]
 
 [node name="VBoxContainer" type="VBoxContainer" unique_id=1270488609]

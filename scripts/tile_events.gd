@@ -46,11 +46,11 @@ func _process(_delta: float) -> void:
 			last_hover_pos = tile_pos
 
 func _add_to_inventory(item: String, amount: int) -> void:
-	if PlayerState.inventory.has(item):
-		PlayerState.inventory[item] += amount
+	if PlayerState.crop_inventory.has(item):
+		PlayerState.crop_inventory[item] += amount
 	else:
-		PlayerState.inventory[item] = amount
-	print("Inventory: ", PlayerState.inventory)
+		PlayerState.crop_inventory[item] = amount
+	print("Inventory: ", PlayerState.crop_inventory)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -79,7 +79,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				if source_id != -1 and atlas_coord == Vector2i(3, 0):
 					tilemap.erase_cell(tile_pos)
 					PlayerState.planted_tiles.erase(tile_pos)
-					_add_to_inventory("wheat", 1)
+					_add_to_inventory("Wheat", 1)
 					terrain_map.set_cell(tile_pos, 1, Vector2i(0, 3)) # replace with dirt
 			elif PlayerState.tool == "shovel":
 				if terrain_source_id == 1 && terrain_atlas == Vector2i(0, 3):

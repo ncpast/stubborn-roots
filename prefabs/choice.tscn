@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b7n8rod3s6sbw"]
 
 [ext_resource type="Texture2D" uid="uid://ds4j3uske6jw4" path="res://icon.svg" id="1_65rq8"]
-[ext_resource type="Script" uid="uid://t1owirdxjwhv" path="res://scripts/seedchoiceinitiate.gd" id="1_svcnt"]
+[ext_resource type="Script" uid="uid://t1owirdxjwhv" path="res://scripts/shops/seedchoiceinitiate.gd" id="1_svcnt"]
 [ext_resource type="PackedScene" uid="uid://c7ttfrw4otp22" path="res://prefabs/seedlist.tscn" id="3_yklnn"]
 
 [node name="Control" type="Control" unique_id=1982022041]

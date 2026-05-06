@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://uy7mvvr4ur5k"]
+
+[ext_resource type="Script" uid="uid://bppgt8qq2jjmm" path="res://scripts/shops/parsecropinfo.gd" id="1_5cur6"]
+[ext_resource type="Texture2D" uid="uid://ds4j3uske6jw4" path="res://icon.svg" id="1_66fe5"]
+
+[sub_resource type="FontVariation" id="FontVariation_ofyo7"]
+spacing_top = -4
+spacing_bottom = -4
+
+[sub_resource type="FontVariation" id="FontVariation_s5sk6"]
+spacing_top = -4
+spacing_bottom = -4
+
+[node name="Button" type="Button" unique_id=1045377028]
+custom_minimum_size = Vector2(70, 90)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("1_5cur6")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=15960590]
+custom_minimum_size = Vector2(55, 55)
+layout_mode = 0
+offset_left = 7.5
+offset_top = 7.5
+offset_right = 62.5
+offset_bottom = 62.5
+texture = ExtResource("1_66fe5")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=512297776]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -35.0
+offset_top = -31.0
+offset_right = 35.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 5
+
+[node name="Name" type="Label" parent="VBoxContainer" unique_id=446537851]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = SubResource("FontVariation_ofyo7")
+theme_override_font_sizes/font_size = 14
+text = "name"
+horizontal_alignment = 1
+vertical_alignment = 2
+uppercase = true
+
+[node name="Count" type="Label" parent="VBoxContainer" unique_id=326204935]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_s5sk6")
+theme_override_font_sizes/font_size = 12
+text = "count"
+horizontal_alignment = 1

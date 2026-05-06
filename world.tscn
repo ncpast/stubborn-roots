@@ -6,7 +6,9 @@
 [ext_resource type="Script" uid="uid://c2pfg8tl145y6" path="res://scripts/canvas_modulate.gd" id="3_pkg7o"]
 [ext_resource type="Script" uid="uid://xi3a0glmavnt" path="res://player_data/data_handler.gd" id="4_036b0"]
 [ext_resource type="PackedScene" uid="uid://b7n8rod3s6sbw" path="res://prefabs/choice.tscn" id="4_ic0uy"]
+[ext_resource type="Script" uid="uid://c11iowbki6twp" path="res://scripts/label.gd" id="5_2o6r5"]
 [ext_resource type="Texture2D" uid="uid://bgqubk365w6wg" path="res://assets/textures/money.png" id="5_036b0"]
+[ext_resource type="PackedScene" uid="uid://blooflc03wfc" path="res://prefabs/crop_shop.tscn" id="5_70uel"]
 [ext_resource type="Script" uid="uid://c4c7o74agpgft" path="res://scripts/controls/camera_2d.gd" id="6_dwbse"]
 [ext_resource type="Texture2D" uid="uid://ddf411gqctng3" path="res://assets/textures/wheat.png" id="6_gbfbk"]
 [ext_resource type="Texture2D" uid="uid://3f0pu3rknodo" path="res://assets/textures/fence.png" id="6_ioo17"]
@@ -136,6 +138,7 @@ script = ExtResource("1_gbfbk")
 [node name="Control" parent="HUD" unique_id=253801313 instance=ExtResource("9_wse8f")]
 
 [node name="PanelContainer" type="PanelContainer" parent="HUD" unique_id=1213088341]
+visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -166,9 +169,30 @@ theme_override_font_sizes/font_size = 20
 text = "
 000"
 
-[node name="Control2" parent="HUD" unique_id=1982022041 instance=ExtResource("4_ic0uy")]
-offset_left = 13.63
-offset_right = 61.63
+[node name="SeedShop" parent="HUD" unique_id=1982022041 instance=ExtResource("4_ic0uy")]
+offset_right = 58.0
+
+[node name="HBoxContainer" type="PanelContainer" parent="HUD" unique_id=545785037]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -37.0
+offset_bottom = 32.0
+grow_horizontal = 0
+pivot_offset = Vector2(5.045, 0)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/HBoxContainer" unique_id=994662348]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HUD/HBoxContainer/HBoxContainer" unique_id=2130054422]
+layout_mode = 2
+texture = ExtResource("5_036b0")
+
+[node name="Label" type="Label" parent="HUD/HBoxContainer/HBoxContainer" unique_id=810959195]
+layout_mode = 2
+script = ExtResource("5_2o6r5")
+
+[node name="CropShop" parent="HUD" unique_id=1304288809 instance=ExtResource("5_70uel")]
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=105694393]
 script = ExtResource("3_pkg7o")
