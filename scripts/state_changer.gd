@@ -1,5 +1,7 @@
 extends Control
 
+@onready var click = $"../../Sounds/Click"
+
 func _ready() -> void:
 	for child in get_children():
 		if child is Button and child.has_meta("tool"):
@@ -8,6 +10,7 @@ func _ready() -> void:
 
 func _change_player_status(new_status: String) -> void:
 	PlayerState.update_tool(new_status)
+	click.play()
 	
 	for child in get_children():
 		if child is Button and child.has_meta("tool"):
@@ -20,7 +23,7 @@ func _set_button_border(button: Button, color: Color) -> void:
 	for state in ["normal", "hover", "pressed", "focus", "disabled"]:
 		var style = StyleBoxFlat.new()
 		style.border_color = color
-		style.set_border_width_all(2)
+		style.set_border_width_all(0)
 		var existing = button.get_theme_stylebox(state)
 		if existing is StyleBoxFlat:
 			style.bg_color = existing.bg_color
@@ -31,7 +34,9 @@ func _set_button_border(button: Button, color: Color) -> void:
 		else:
 			style.bg_color = Color(0.15, 0.15, 0.15, 1)
 		button.add_theme_stylebox_override(state, style)
+		button.icon = load("res://assets/ui/Slot_Selected.png")
 
 func _clear_button_border(button: Button) -> void:
 	for state in ["normal", "hover", "pressed", "focus", "disabled"]:
 		button.remove_theme_stylebox_override(state)
+		button.icon = load("res://assets/ui/Slot_UnSelected.png")

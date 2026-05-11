@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c5rvyivxo6xi0"]
 
 [ext_resource type="Script" uid="uid://c3txalamlmyem" path="res://scripts/state_changer.gd" id="1_har8n"]
+[ext_resource type="Texture2D" uid="uid://bj5jlmrw7khg0" path="res://assets/ui/Slot_UnSelected.png" id="2_1kv7y"]
 
 [node name="Control" type="Control" unique_id=253801313]
 z_index = 99
@@ -28,51 +29,81 @@ alignment = 1
 script = ExtResource("1_har8n")
 
 [node name="state6" type="Button" parent="HBoxContainer" unique_id=45570286]
+texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "🌱"
+icon = ExtResource("2_1kv7y")
+flat = true
 clip_text = true
+icon_alignment = 1
+expand_icon = true
 metadata/tool = "plant"
 
 [node name="state1" type="Button" parent="HBoxContainer" unique_id=1907954939]
+texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "🪏"
+icon = ExtResource("2_1kv7y")
+flat = true
 clip_text = true
+icon_alignment = 1
+expand_icon = true
 metadata/tool = "shovel"
 
 [node name="state5" type="Button" parent="HBoxContainer" unique_id=1391233581]
+texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "⛏️"
+icon = ExtResource("2_1kv7y")
+flat = true
 clip_text = true
+icon_alignment = 1
+expand_icon = true
 metadata/tool = "hoe"
 
 [node name="state4" type="Button" parent="HBoxContainer" unique_id=1191056093]
+texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "✋"
+icon = ExtResource("2_1kv7y")
+flat = true
 clip_text = true
+icon_alignment = 1
+expand_icon = true
 metadata/tool = "gather"
 
 [node name="state3" type="Button" parent="HBoxContainer" unique_id=1705060944]
+texture_filter = 1
 clip_contents = true
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "🔨"
+icon = ExtResource("2_1kv7y")
+flat = true
 autowrap_trim_flags = 0
 clip_text = true
+icon_alignment = 1
+expand_icon = true
 metadata/tool = "build"
 
 [node name="state2" type="Button" parent="HBoxContainer" unique_id=355075860]
+texture_filter = 1
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "🪓"
+icon = ExtResource("2_1kv7y")
+flat = true
 clip_text = true
+icon_alignment = 1
+expand_icon = true
 metadata/tool = "axe"

@@ -1,5 +1,9 @@
 extends Node2D
 
+@onready var work = $terrain/Sounds/Dirt_work
+@onready var plant = $terrain/Sounds/Plant
+@onready var gather = $terrain/Sounds/Gather
+
 var highlight_layer: TileMapLayer
 var last_hover_pos = Vector2i.ZERO
 
@@ -51,6 +55,7 @@ func _add_to_inventory(item: String, amount: int) -> void:
 	else:
 		PlayerState.crop_inventory[item] = amount
 	print("Inventory: ", PlayerState.crop_inventory)
+	
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -71,6 +76,7 @@ func _unhandled_input(event: InputEvent) -> void:
 					-1:
 						tilemap.set_cell(tile_pos, PlayerState.selected_source_id, PlayerState.selected_tile)
 						PlayerState.planted_tiles[tile_pos] = { "stage": 0, "time": 0.0, "tilemap": tilemap, "growth_time": 2 }
+						plant.play()
 			elif PlayerState.tool == "axe":
 				tilemap.erase_cell(tile_pos)
 			elif PlayerState.tool == "gather":
@@ -78,9 +84,11 @@ func _unhandled_input(event: InputEvent) -> void:
 				var atlas_coord = tilemap.get_cell_atlas_coords(tile_pos)
 				if source_id != -1 and atlas_coord == Vector2i(3, 0):
 					tilemap.erase_cell(tile_pos)
+					gather.play()
 					PlayerState.planted_tiles.erase(tile_pos)
 					_add_to_inventory("Wheat", 1)
 					terrain_map.set_cell(tile_pos, 1, Vector2i(0, 3)) # replace with dirt
 			elif PlayerState.tool == "shovel":
 				if terrain_source_id == 1 && terrain_atlas == Vector2i(0, 3):
-					terrain_map.set_cell(tile_pos, 1, Vector2i(0, 1));
+					terrain_map.set_cell(tile_pos, 1, Vector2i(0, 1))
+					work.play()
