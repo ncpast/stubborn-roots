@@ -69,14 +69,21 @@ func _unhandled_input(event: InputEvent) -> void:
 			var terrain_atlas = terrain_map.get_cell_atlas_coords(tile_pos)
 			var can_be_planted: bool = terrain_source_id == 1 && terrain_atlas == Vector2i(0, 1)
 			
+			var plant_data = WorldData.plants[PlayerState.selected_crop]
+			var cost = plant_data.purchase.cost * WorldData.purchase_multiplier
+			
 			#print("Tile: ", tile_pos, "; Mode: ", PlayerState.tool, "; Space: ", tilemap.name)
 			
 			if PlayerState.tool == "plant" && can_be_planted:
 				match tilemap.get_cell_source_id(tile_pos):
 					-1:
-						tilemap.set_cell(tile_pos, PlayerState.selected_source_id, PlayerState.selected_tile)
-						PlayerState.planted_tiles[tile_pos] = { "stage": 0, "time": 0.0, "tilemap": tilemap, "growth_time": 2 }
-						plant.play()
+						if PlayerState.money >= cost:
+							PlayerState.money -= cost
+							tilemap.set_cell(tile_pos, plant_data.tile_origin_id, PlayerState.selected_tile)
+							PlayerState.planted_tiles[tile_pos] = { "stage": 0, "time": 0.0, 
+							"tilemap": tilemap, "growth_time": 2, "tile_origin_id": plant_data.tile_origin_id,
+							"name": PlayerState.selected_crop }
+							plant.play()
 			elif PlayerState.tool == "axe":
 				tilemap.erase_cell(tile_pos)
 			elif PlayerState.tool == "gather":
@@ -85,8 +92,9 @@ func _unhandled_input(event: InputEvent) -> void:
 				if source_id != -1 and atlas_coord == Vector2i(3, 0):
 					tilemap.erase_cell(tile_pos)
 					gather.play()
+					var gathered_name = PlayerState.planted_tiles[tile_pos].name
 					PlayerState.planted_tiles.erase(tile_pos)
-					_add_to_inventory("Wheat", 1)
+					_add_to_inventory(gathered_name, 1)
 					terrain_map.set_cell(tile_pos, 1, Vector2i(0, 3)) # replace with dirt
 			elif PlayerState.tool == "shovel":
 				if terrain_source_id == 1 && terrain_atlas == Vector2i(0, 3):

@@ -4,35 +4,46 @@ var purchase_multiplier = 1
 var cost_multiplier = 1
 
 var plants = {
-	"Wheat": {
+	"wheat": {
 		"purchase": {
 			"cost": 5
 		},
+		"tile_origin_id": 0,
 		"sell": {
-			"cost": 40
+			"cost": 7
 		},
 		"growth_time": 100,
 		"description": "Wheat grows on soil"
 	},
-	"Potato": {
+	"carrot": {
 		"purchase": {
-			"cost": 2
+			"cost": 10
 		},
+		"tile_origin_id": 2,
 		"sell": {
-			"cost": 20
+			"cost": 16
 		},
-		"growth_time": 30,
-		"description": "Potato grows on soil"
+		"growth_time": 200,
+		"description": "Carrots grow on soil"
 	},
-	"Tomato": {
+	"tomato": {
 		"name": "Tomato",
 		"purchase": {
-			"cost": 7
+			"cost": 15
 		},
+		"tile_origin_id": 1,
 		"sell": {
-			"cost": 80
+			"cost": 25
 		},
 		"growth_time": 130,
-		"description": "Tomato grows on soil"
+		"description": "Tomatoes grow on soil"
 	},
+	"bread": {
+		"name": "Bread",
+		"plantable": false,
+		"sell": {
+			"cost": 70
+		},
+		"description": "Make bread out of wheat to sell at a higher price"
+	}
 }

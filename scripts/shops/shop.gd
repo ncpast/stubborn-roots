@@ -3,18 +3,8 @@ extends Node
 func buy_item(item_name: String):
 	var plant_data = WorldData.plants[item_name]
 	var cost = plant_data["purchase"]["cost"] * WorldData.purchase_multiplier
-
-	if PlayerState.money >= cost:
-		PlayerState.money -= cost
-		
-		if PlayerState.seed_inventory.has(item_name):
-			PlayerState.seed_inventory[item_name] += 1
-		else:
-			PlayerState.seed_inventory[item_name] = 1
-			
-		print("Bought ", item_name, ". Seed inventory: ", PlayerState.seed_inventory)
-	else:
-		print("Not enough money!")
+	PlayerState.selected_crop = item_name
+	print("selected crop: ", PlayerState.selected_crop)
 
 func sell_item(item_name: String):
 	# Check if we have at least 1 of the item

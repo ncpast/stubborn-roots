@@ -8,16 +8,16 @@ var tool_space = "terrain/crops"
 var terrain_map = "terrain"
 
 var selected_tile = Vector2i(0, 0)
-var selected_source_id = 0
+var selected_source_id = 1
 var planted_tiles = {}
 
 var money = 100;
-var seed_inventory = {}
 var crop_inventory = {
-	"Wheat" :1,
-	"Tomato" :1,
-	"Potato" :1,
+	"wheat" :1,
+	"tomato" :1,
+	"carrot" :1,
 }
+var selected_crop = "wheat"
 
 func update_state(new_tool_space):
 	tool_space = new_tool_space

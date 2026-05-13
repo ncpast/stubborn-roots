@@ -7,6 +7,8 @@ const STAGES = [
 	Vector2i(3, 0),  # full grown
 ]
 
+const SKIP_CHANCE = 0.2
+
 func _process(delta: float) -> void:
 	for tile_pos in PlayerState.planted_tiles:
 		var data = PlayerState.planted_tiles[tile_pos]
@@ -17,4 +19,6 @@ func _process(delta: float) -> void:
 		if data["time"] >= data["growth_time"]:
 			data["time"] = 0.0
 			data["stage"] += 1
-			tilemap.set_cell(tile_pos, 0, STAGES[data["stage"]])
+			if randf() < SKIP_CHANCE and data["stage"] < STAGES.size() - 1:
+				data["stage"] -= 1
+			tilemap.set_cell(tile_pos, data["tile_origin_id"], STAGES[data["stage"]])
