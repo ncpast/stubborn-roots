@@ -7,6 +7,9 @@ func _ready() -> void:
 	
 func spawn_buttons() -> void:
 	for plant_id in WorldData.plants:
+		var plant = WorldData.plants.get(plant_id)
+		if plant.has("plantable") and plant.plantable == false:
+			continue
 		var new_item = list_item.instantiate()
 		add_child(new_item)
 		new_item.setup_seed_info(plant_id)
