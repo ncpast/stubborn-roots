@@ -72,8 +72,6 @@ func _unhandled_input(event: InputEvent) -> void:
 			var plant_data = WorldData.plants[PlayerState.selected_crop]
 			var cost = plant_data.purchase.cost * WorldData.purchase_multiplier
 			
-			#print("Tile: ", tile_pos, "; Mode: ", PlayerState.tool, "; Space: ", tilemap.name)
-			
 			if PlayerState.tool == "plant" && can_be_planted:
 				match tilemap.get_cell_source_id(tile_pos):
 					-1:
@@ -84,6 +82,10 @@ func _unhandled_input(event: InputEvent) -> void:
 							"tilemap": tilemap, "growth_time": 2, "tile_origin_id": plant_data.tile_origin_id,
 							"name": PlayerState.selected_crop }
 							plant.play()
+							
+							spawn_pure_text("-" + str(cost) + " $", Color.RED, tilemap, tile_pos)
+							spawn_pure_particles(tilemap, tile_pos, Color(0.34, 0.20, 0.08))
+							
 			elif PlayerState.tool == "axe":
 				tilemap.erase_cell(tile_pos)
 			elif PlayerState.tool == "gather":
@@ -95,8 +97,47 @@ func _unhandled_input(event: InputEvent) -> void:
 					var gathered_name = PlayerState.planted_tiles[tile_pos].name
 					PlayerState.planted_tiles.erase(tile_pos)
 					_add_to_inventory(gathered_name, 1)
-					terrain_map.set_cell(tile_pos, 1, Vector2i(0, 3)) # replace with dirt
+					terrain_map.set_cell(tile_pos, 1, Vector2i(0, 3))
+					
+					spawn_pure_text("+1 " + gathered_name.capitalize(), Color.GREEN, tilemap, tile_pos)
+					spawn_pure_particles(terrain_map, tile_pos, Color(0.18, 0.55, 0.24))
+					
 			elif PlayerState.tool == "shovel":
 				if terrain_source_id == 1 && terrain_atlas == Vector2i(0, 3):
 					terrain_map.set_cell(tile_pos, 1, Vector2i(0, 1))
 					work.play()
+					
+					spawn_pure_particles(terrain_map, tile_pos, Color(0.34, 0.20, 0.08))
+
+func spawn_pure_text(txt: String, custom_color: Color, target_layer: TileMapLayer, tile_pos: Vector2i):
+	var label = Label.new()
+	label.text = txt
+	label.modulate = custom_color
+	label.z_index = 10
+	label.scale = Vector2(0.75, 0.75)
+	label.global_position = target_layer.map_to_local(tile_pos) + Vector2(randf_range(-15, 15), 0)
+	get_tree().current_scene.add_child(label)
+	
+	var tween = create_tween().set_parallel(true)
+	tween.tween_property(label, "position:y", label.position.y - 60, 1.0)
+	tween.tween_property(label, "modulate:a", 0.0, 1.0)
+	tween.chain().tween_callback(label.queue_free)
+
+func spawn_pure_particles(target_layer: TileMapLayer, tile_pos: Vector2i, particle_color: Color):
+	var particles = CPUParticles2D.new()
+	particles.position = target_layer.map_to_local(tile_pos)
+	particles.amount = 12
+	particles.one_shot = true
+	particles.explosiveness = 1.0
+	particles.direction = Vector2(0, -1)
+	particles.spread = 45.0
+	particles.gravity = Vector2(0, 250)
+	particles.initial_velocity_min = 60.0
+	particles.initial_velocity_max = 100.0
+	particles.color = particle_color
+	
+	get_tree().current_scene.add_child(particles)
+	particles.emitting = true
+	
+	var timer = get_tree().create_timer(particles.lifetime)
+	timer.timeout.connect(particles.queue_free)
