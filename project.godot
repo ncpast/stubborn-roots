@@ -26,6 +26,10 @@ Shop="*uid://gwq6ta3r3hht"
 
 project/assembly_name="stubborn-roots"
 
+[gui]
+
+theme/custom_font="uid://b0jdy36yibxth"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

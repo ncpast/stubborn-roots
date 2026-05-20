@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://blooflc03wfc"]
 
 [ext_resource type="Texture2D" uid="uid://bj5jlmrw7khg0" path="res://assets/ui/Slot_UnSelected.png" id="1_61wxx"]
-[ext_resource type="Script" uid="uid://t1owirdxjwhv" path="res://scripts/shops/seedchoiceinitiate.gd" id="2_sij51"]
+[ext_resource type="Script" uid="uid://cq56icxjre1e3" path="res://prefabs/seedsellinitiate.gd" id="2_61wxx"]
 [ext_resource type="PackedScene" uid="uid://c6b7jkdta5da7" path="res://prefabs/crop_list.tscn" id="3_61wxx"]
 [ext_resource type="Texture2D" uid="uid://dcp3131glnuhh" path="res://assets/ui/market.png" id="4_8wpqo"]
 
@@ -19,13 +19,19 @@ offset_right = -10.0
 offset_bottom = -310.0
 grow_horizontal = 0
 grow_vertical = 0
+mouse_filter = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=350057991]
+[node name="HBoxContainer" type="VBoxContainer" parent="." unique_id=1137605592]
 custom_minimum_size = Vector2(250, 350)
-layout_direction = 3
-layout_mode = 0
-offset_right = 250.0
-offset_bottom = 250.0
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -250.0
+offset_bottom = 350.0
+grow_horizontal = 0
+alignment = 2
 
 [node name="Button" type="Button" parent="HBoxContainer" unique_id=1464431395]
 texture_filter = 1
@@ -37,7 +43,7 @@ icon = ExtResource("1_61wxx")
 flat = true
 icon_alignment = 1
 expand_icon = true
-script = ExtResource("2_sij51")
+script = ExtResource("2_61wxx")
 seedlist = ExtResource("3_61wxx")
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/Button" unique_id=1135563446]

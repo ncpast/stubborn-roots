@@ -100,8 +100,9 @@ func _unhandled_input(event: InputEvent) -> void:
 				var source_id = tilemap.get_cell_source_id(tile_pos)
 				var atlas_coord = tilemap.get_cell_atlas_coords(tile_pos)
 				
-				if source_id_buildings == 67 and PlayerState.crop_inventory.wheat >= 5:
-					PlayerState.crop_inventory.wheat -= 5
+				if source_id_buildings == 67 and PlayerState.crop_inventory.get("wheat", 0) >= 5:
+					PlayerState.crop_inventory["wheat"] -= 5 # Safe to use brackets here since we know it's >= 5
+					
 					if PlayerState.crop_inventory.has("bread"):
 						PlayerState.crop_inventory["bread"] += 1
 					else:

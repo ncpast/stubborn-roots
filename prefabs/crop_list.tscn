@@ -3,10 +3,14 @@
 [ext_resource type="Script" uid="uid://b75ysx1sulpqd" path="res://scripts/shops/crop_list.gd" id="1_b35v5"]
 [ext_resource type="PackedScene" uid="uid://uy7mvvr4ur5k" path="res://prefabs/cropbutton.tscn" id="2_nheia"]
 
-[node name="CropList" type="HBoxContainer" unique_id=1069300220]
-custom_minimum_size = Vector2(250, 275)
+[node name="CropList" type="PanelContainer" unique_id=612827543]
+custom_minimum_size = Vector2(230, 230)
 layout_direction = 3
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 250.0
+offset_bottom = 275.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1876735421]
+layout_mode = 2
+alignment = 1
 script = ExtResource("1_b35v5")
 list_item = ExtResource("2_nheia")
