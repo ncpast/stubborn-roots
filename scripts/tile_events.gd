@@ -3,6 +3,9 @@ extends Node2D
 @onready var work = $terrain/Sounds/Dirt_work
 @onready var plant = $terrain/Sounds/Plant
 @onready var gather = $terrain/Sounds/Gather
+@onready var hammer = $terrain/Sounds/Hammer
+@onready var craft = $terrain/Sounds/Craft
+@onready var craft2 = $terrain/Sounds/Craft2
 
 var highlight_layer: TileMapLayer
 var last_hover_pos = Vector2i.ZERO
@@ -103,6 +106,8 @@ func _unhandled_input(event: InputEvent) -> void:
 				if source_id_buildings == 67 and PlayerState.crop_inventory.get("wheat", 0) >= 5:
 					PlayerState.crop_inventory["wheat"] -= 5 # Safe to use brackets here since we know it's >= 5
 					
+					craft.play()
+					craft2.play()
 					if PlayerState.crop_inventory.has("bread"):
 						PlayerState.crop_inventory["bread"] += 1
 					else:
@@ -130,6 +135,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				if PlayerState.money >= WorldData.buildings.windmill.cost:
 					PlayerState.money -= WorldData.buildings.windmill.cost
 					buildingmap.set_cell(building_pos, 67, Vector2i(0, 0))
+					hammer.play()
 					spawn_pure_text("-" + str(WorldData.buildings.windmill.cost) + "$", Color.RED, buildingmap, building_pos)
 					spawn_pure_particles(buildingmap, building_pos, Color(0.34, 0.275, 0.218, 1.0))
 

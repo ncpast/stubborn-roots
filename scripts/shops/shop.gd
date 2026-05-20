@@ -32,6 +32,6 @@ func sell_item(item_name: String):
 			
 		# Optional: Updated print statement to show how many were sold
 		print("Sold ", amount_to_sell, " ", item_name, "(s) for ", total_price, ". Total Money: ", PlayerState.money)
-		
+		get_node("/root/World/terrain/Sounds/Sell").play()
 	else:
 		print("Cannot sell: No ", item_name, " in inventory.")

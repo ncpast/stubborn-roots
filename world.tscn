@@ -21,8 +21,12 @@
 [ext_resource type="AudioStream" uid="uid://bgbntsmq3kd66" path="res://assets/sounds/Plant_Seeds.wav" id="14_udxuc"]
 [ext_resource type="AudioStream" uid="uid://cip7xm17j1elh" path="res://assets/sounds/Hand_Collect.wav" id="15_ikiii"]
 [ext_resource type="Texture2D" uid="uid://cec1syiakxll" path="res://assets/textures/windmill.png" id="16_bc84e"]
-[ext_resource type="Script" path="res://scripts/street_light.gd" id="22_wukud"]
-[ext_resource type="Script" path="res://scripts/falling_particles.gd" id="23_il2jm"]
+[ext_resource type="AudioStream" uid="uid://br0senfqt2nqm" path="res://assets/sounds/hammer.wav" id="20_wjb0r"]
+[ext_resource type="AudioStream" uid="uid://5qfm6rikuinl" path="res://assets/sounds/craft.wav" id="21_bo7i5"]
+[ext_resource type="AudioStream" uid="uid://bb4a7uve5kw45" path="res://assets/sounds/ZdMelnica1.wav" id="22_4h6ng"]
+[ext_resource type="Script" uid="uid://0kh6ub08wrli" path="res://scripts/street_light.gd" id="22_wukud"]
+[ext_resource type="AudioStream" uid="uid://4gd4qbmxavlm" path="res://assets/sounds/Sell.wav" id="23_4h6ng"]
+[ext_resource type="Script" uid="uid://c8o1wjfhxm1p1" path="res://scripts/falling_particles.gd" id="23_il2jm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dwbse"]
 bg_color = Color(0.21710122, 0.21710122, 0.21710122, 1)
@@ -373,6 +377,18 @@ volume_db = -7.0
 [node name="Gather" type="AudioStreamPlayer2D" parent="terrain/Sounds" unique_id=1590004584]
 position = Vector2(-2, 2)
 stream = ExtResource("15_ikiii")
+
+[node name="Hammer" type="AudioStreamPlayer2D" parent="terrain/Sounds" unique_id=1163051500]
+stream = ExtResource("20_wjb0r")
+
+[node name="Craft" type="AudioStreamPlayer2D" parent="terrain/Sounds" unique_id=1935093024]
+stream = ExtResource("21_bo7i5")
+
+[node name="Craft2" type="AudioStreamPlayer2D" parent="terrain/Sounds" unique_id=2004467091]
+stream = ExtResource("22_4h6ng")
+
+[node name="Sell" type="AudioStreamPlayer2D" parent="terrain/Sounds" unique_id=1436099776]
+stream = ExtResource("23_4h6ng")
 
 [node name="APIClient" type="Node" parent="." unique_id=146758784]
 script = ExtResource("4_036b0")
