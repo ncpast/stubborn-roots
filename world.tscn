@@ -21,8 +21,8 @@
 [ext_resource type="AudioStream" uid="uid://bgbntsmq3kd66" path="res://assets/sounds/Plant_Seeds.wav" id="14_udxuc"]
 [ext_resource type="AudioStream" uid="uid://cip7xm17j1elh" path="res://assets/sounds/Hand_Collect.wav" id="15_ikiii"]
 [ext_resource type="Texture2D" uid="uid://cec1syiakxll" path="res://assets/textures/windmill.png" id="16_bc84e"]
-[ext_resource type="Script" uid="uid://0kh6ub08wrli" path="res://scripts/street_light.gd" id="22_wukud"]
-[ext_resource type="Script" uid="uid://c8o1wjfhxm1p1" path="res://scripts/falling_particles.gd" id="23_il2jm"]
+[ext_resource type="Script" path="res://scripts/street_light.gd" id="22_wukud"]
+[ext_resource type="Script" path="res://scripts/falling_particles.gd" id="23_il2jm"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dwbse"]
 bg_color = Color(0.21710122, 0.21710122, 0.21710122, 1)
