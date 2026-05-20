@@ -11,7 +11,7 @@ var selected_tile = Vector2i(0, 0)
 var selected_source_id = 1
 var planted_tiles = {}
 
-var money = 1000;
+var money = 99999;
 var crop_inventory = {
 	"wheat" :1,
 	"tomato" :1,

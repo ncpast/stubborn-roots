@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://t1owirdxjwhv" path="res://scripts/shops/seedchoiceinitiate.gd" id="1_svcnt"]
 [ext_resource type="PackedScene" uid="uid://c7ttfrw4otp22" path="res://prefabs/seedlist.tscn" id="3_yklnn"]
 [ext_resource type="Texture2D" uid="uid://dfic3ls44kxrc" path="res://assets/ui/seed_sachet.png" id="4_hbdmg"]
+[ext_resource type="Script" uid="uid://bly8opukoji26" path="res://scripts/change_season.gd" id="5_hbdmg"]
 
 [node name="Control" type="Control" unique_id=1982022041]
 layout_mode = 3
@@ -13,16 +14,13 @@ offset_top = 10.0
 offset_right = 60.0
 offset_bottom = 60.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2070278764]
-custom_minimum_size = Vector2(500, 0)
-layout_direction = 2
+[node name="HBoxContainer2" type="VBoxContainer" parent="." unique_id=324529327]
 layout_mode = 0
-offset_right = 535.0
-offset_bottom = 413.0
-mouse_filter = 2
-theme_override_constants/separation = 10
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 2
 
-[node name="Button" type="Button" parent="HBoxContainer" unique_id=263914345]
+[node name="Button" type="Button" parent="HBoxContainer2" unique_id=263914345]
 texture_filter = 1
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
@@ -35,7 +33,7 @@ expand_icon = true
 script = ExtResource("1_svcnt")
 seedlist = ExtResource("3_yklnn")
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Button" unique_id=752382907]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer2/Button" unique_id=752382907]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -49,3 +47,43 @@ offset_bottom = 28.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_hbdmg")
+
+[node name="Season" type="Button" parent="HBoxContainer2" unique_id=972074396]
+texture_filter = 1
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+icon = ExtResource("1_qe41q")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("5_hbdmg")
+
+[node name="SeasonIcon" type="TextureRect" parent="HBoxContainer2/Season" unique_id=2088264298]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.5
+offset_top = -26.5
+offset_right = 26.5
+offset_bottom = 26.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FadeOverlay" type="ColorRect" parent="." unique_id=617806124]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -8231.0
+offset_top = -6243.0
+offset_right = 9549.0
+offset_bottom = 8003.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
