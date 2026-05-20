@@ -2,7 +2,7 @@ extends CanvasModulate
 
 @export_group("Cycle Durations")
 @export var day_duration: float = 20.0 #* 10
-@export var night_duration: float = 10.0 #* 10
+@export var night_duration: float = 10.0 * 4#* 10
 
 @export_group("Visuals")
 @export var gradient: Gradient

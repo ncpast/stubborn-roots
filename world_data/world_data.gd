@@ -3,6 +3,12 @@ extends Node
 var purchase_multiplier = 1
 var cost_multiplier = 1
 
+var buildings = {
+	"windmill": {
+		"cost": 1000
+	}
+}
+
 var plants = {
 	"wheat": {
 		"purchase": {
@@ -42,7 +48,7 @@ var plants = {
 		"name": "Bread",
 		"plantable": false,
 		"sell": {
-			"cost": 70
+			"cost": 50
 		},
 		"description": "Make bread out of wheat to sell at a higher price"
 	}

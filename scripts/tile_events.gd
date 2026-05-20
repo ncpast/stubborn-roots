@@ -41,7 +41,7 @@ func _on_tool_changed() -> void:
 	_update_highlight()
 
 func _process(_delta: float) -> void:
-	if highlight_layer and (PlayerState.tool == "plant" || PlayerState.tool == "build"):
+	if highlight_layer and (PlayerState.tool == "plant"):
 		var world_pos = get_global_mouse_position()
 		var tile_pos = highlight_layer.local_to_map(world_pos)
 		if tile_pos != last_hover_pos:
@@ -61,8 +61,15 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			var tilemap: TileMapLayer = get_node(PlayerState.tool_space)
+			var buildingmap: TileMapLayer = get_node("terrain/props_large")
 			var world_pos = get_global_mouse_position()
 			var tile_pos = tilemap.local_to_map(world_pos)
+			
+			var building_pos = buildingmap.local_to_map(world_pos)
+			var source_id_buildings = buildingmap.get_cell_source_id(building_pos)
+			var atlas_coord_buildings = buildingmap.get_cell_atlas_coords(building_pos)
+			
+			var is_windmill: bool = source_id_buildings == 67
 			
 			var terrain_map: TileMapLayer = get_node(PlayerState.terrain_map)
 			var terrain_source_id = terrain_map.get_cell_source_id(tile_pos)
@@ -72,7 +79,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			var plant_data = WorldData.plants[PlayerState.selected_crop]
 			var cost = plant_data.purchase.cost * WorldData.purchase_multiplier
 			
-			if PlayerState.tool == "plant" && can_be_planted:
+			if PlayerState.tool == "plant" && can_be_planted && !is_windmill:
 				match tilemap.get_cell_source_id(tile_pos):
 					-1:
 						if PlayerState.money >= cost:
@@ -83,14 +90,24 @@ func _unhandled_input(event: InputEvent) -> void:
 							"name": PlayerState.selected_crop }
 							plant.play()
 							
-							spawn_pure_text("-" + str(cost) + " $", Color.RED, tilemap, tile_pos)
-							spawn_pure_particles(tilemap, tile_pos, Color(0.34, 0.20, 0.08))
+							spawn_pure_text("-" + str(cost) + "$", Color.RED, tilemap, tile_pos)
+							spawn_pure_particles(tilemap, tile_pos, Color(0.34, 0.275, 0.218, 1.0))
 							
 			elif PlayerState.tool == "axe":
 				tilemap.erase_cell(tile_pos)
+				buildingmap.erase_cell(building_pos)
 			elif PlayerState.tool == "gather":
 				var source_id = tilemap.get_cell_source_id(tile_pos)
 				var atlas_coord = tilemap.get_cell_atlas_coords(tile_pos)
+				
+				if source_id_buildings == 67 and PlayerState.crop_inventory.wheat >= 5:
+					PlayerState.crop_inventory.wheat -= 5
+					if PlayerState.crop_inventory.has("bread"):
+						PlayerState.crop_inventory["bread"] += 1
+					else:
+						PlayerState.crop_inventory["bread"] = 1
+					print(PlayerState.crop_inventory)
+				
 				if source_id != -1 and atlas_coord == Vector2i(3, 0):
 					tilemap.erase_cell(tile_pos)
 					gather.play()
@@ -100,14 +117,20 @@ func _unhandled_input(event: InputEvent) -> void:
 					terrain_map.set_cell(tile_pos, 1, Vector2i(0, 3))
 					
 					spawn_pure_text("+1 " + gathered_name.capitalize(), Color.GREEN, tilemap, tile_pos)
-					spawn_pure_particles(terrain_map, tile_pos, Color(0.18, 0.55, 0.24))
+					spawn_pure_particles(terrain_map, tile_pos, Color(0.34, 0.275, 0.218, 1.0))
 					
-			elif PlayerState.tool == "shovel":
+			elif PlayerState.tool == "shovel" && !is_windmill:
 				if terrain_source_id == 1 && terrain_atlas == Vector2i(0, 3):
 					terrain_map.set_cell(tile_pos, 1, Vector2i(0, 1))
 					work.play()
 					
-					spawn_pure_particles(terrain_map, tile_pos, Color(0.34, 0.20, 0.08))
+					spawn_pure_particles(terrain_map, tile_pos, Color(0.34, 0.275, 0.218, 1.0))
+			elif PlayerState.tool == "build" && !is_windmill:
+				if PlayerState.money >= WorldData.buildings.windmill.cost:
+					PlayerState.money -= WorldData.buildings.windmill.cost
+					buildingmap.set_cell(building_pos, 67, Vector2i(0, 0))
+					spawn_pure_text("-" + str(WorldData.buildings.windmill.cost) + "$", Color.RED, buildingmap, building_pos)
+					spawn_pure_particles(buildingmap, building_pos, Color(0.34, 0.275, 0.218, 1.0))
 
 func spawn_pure_text(txt: String, custom_color: Color, target_layer: TileMapLayer, tile_pos: Vector2i):
 	var label = Label.new()
@@ -126,7 +149,7 @@ func spawn_pure_text(txt: String, custom_color: Color, target_layer: TileMapLaye
 func spawn_pure_particles(target_layer: TileMapLayer, tile_pos: Vector2i, particle_color: Color):
 	var particles = CPUParticles2D.new()
 	particles.position = target_layer.map_to_local(tile_pos)
-	particles.amount = 12
+	particles.amount = 100
 	particles.one_shot = true
 	particles.explosiveness = 1.0
 	particles.direction = Vector2(0, -1)
