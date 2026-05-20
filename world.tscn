@@ -24,7 +24,7 @@
 [ext_resource type="AudioStream" uid="uid://br0senfqt2nqm" path="res://assets/sounds/hammer.wav" id="20_wjb0r"]
 [ext_resource type="AudioStream" uid="uid://5qfm6rikuinl" path="res://assets/sounds/craft.wav" id="21_bo7i5"]
 [ext_resource type="AudioStream" uid="uid://bb4a7uve5kw45" path="res://assets/sounds/ZdMelnica1.wav" id="22_4h6ng"]
-[ext_resource type="Script" uid="uid://0kh6ub08wrli" path="res://scripts/street_light.gd" id="22_wukud"]
+[ext_resource type="Script" path="res://scripts/street_light.gd" id="22_wukud"]
 [ext_resource type="AudioStream" uid="uid://4gd4qbmxavlm" path="res://assets/sounds/Sell.wav" id="23_4h6ng"]
 [ext_resource type="Script" uid="uid://c8o1wjfhxm1p1" path="res://scripts/falling_particles.gd" id="23_il2jm"]
 
@@ -380,6 +380,7 @@ stream = ExtResource("15_ikiii")
 
 [node name="Hammer" type="AudioStreamPlayer2D" parent="terrain/Sounds" unique_id=1163051500]
 stream = ExtResource("20_wjb0r")
+volume_db = -7.105
 
 [node name="Craft" type="AudioStreamPlayer2D" parent="terrain/Sounds" unique_id=1935093024]
 stream = ExtResource("21_bo7i5")
@@ -389,6 +390,7 @@ stream = ExtResource("22_4h6ng")
 
 [node name="Sell" type="AudioStreamPlayer2D" parent="terrain/Sounds" unique_id=1436099776]
 stream = ExtResource("23_4h6ng")
+volume_db = -15.518
 
 [node name="APIClient" type="Node" parent="." unique_id=146758784]
 script = ExtResource("4_036b0")
