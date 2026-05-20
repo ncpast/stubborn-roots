@@ -105,6 +105,8 @@ func _unhandled_input(event: InputEvent) -> void:
 				
 				if source_id_buildings == 67 and PlayerState.crop_inventory.get("wheat", 0) >= 5:
 					PlayerState.crop_inventory["wheat"] -= 5
+					if PlayerState.crop_inventory["wheat"] <= 0:
+						PlayerState.crop_inventory.erase("wheat")
 					
 					craft.play()
 					craft2.play()

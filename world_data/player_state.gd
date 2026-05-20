@@ -11,12 +11,8 @@ var selected_tile = Vector2i(0, 0)
 var selected_source_id = 1
 var planted_tiles = {}
 
-var money = 99999;
-var crop_inventory = {
-	"wheat" :1,
-	"tomato" :1,
-	"carrot" :1,
-}
+var money = 100;
+var crop_inventory = {}
 var selected_crop = "wheat"
 
 func update_state(new_tool_space):
