@@ -241,6 +241,10 @@ fill_from = Vector2(0.49710983, 0.50289017)
 fill_to = Vector2(1, 0.50289017)
 metadata/_snap_count = 2
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_il2jm"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
+
 [node name="World" type="Node2D" unique_id=58810820]
 position = Vector2(0, -1)
 script = ExtResource("1_gbfbk")
@@ -372,4 +376,5 @@ texture_scale = 4.46
 script = ExtResource("22_wukud")
 
 [node name="SeasonParticles" type="GPUParticles2D" parent="." unique_id=2066039698]
+process_material = SubResource("ParticleProcessMaterial_il2jm")
 script = ExtResource("23_il2jm")
