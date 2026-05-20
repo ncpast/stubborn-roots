@@ -104,7 +104,7 @@ func _unhandled_input(event: InputEvent) -> void:
 				var atlas_coord = tilemap.get_cell_atlas_coords(tile_pos)
 				
 				if source_id_buildings == 67 and PlayerState.crop_inventory.get("wheat", 0) >= 5:
-					PlayerState.crop_inventory["wheat"] -= 5 # Safe to use brackets here since we know it's >= 5
+					PlayerState.crop_inventory["wheat"] -= 5
 					
 					craft.play()
 					craft2.play()
@@ -113,6 +113,14 @@ func _unhandled_input(event: InputEvent) -> void:
 					else:
 						PlayerState.crop_inventory["bread"] = 1
 					print(PlayerState.crop_inventory)
+					
+					spawn_pure_text("-5 Wheat", Color.RED, buildingmap, building_pos)
+					spawn_pure_particles(buildingmap, building_pos, Color(0.34, 0.275, 0.218, 1.0))
+					
+					await get_tree().create_timer(0.3).timeout
+					
+					spawn_pure_text("+1 Bread", Color.GREEN, buildingmap, building_pos)
+					spawn_pure_particles(buildingmap, building_pos, Color(0.9, 0.8, 0.6, 1.0))
 				
 				if source_id != -1 and atlas_coord == Vector2i(3, 0):
 					tilemap.erase_cell(tile_pos)
