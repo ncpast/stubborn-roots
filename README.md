@@ -2,7 +2,7 @@
 
 ### A singleplayer isometric pixel-art farming game built with Godot, designed for mobile.
 
-Start with nothing but a humble starting capital of 100 coins. Plant crops, watch them grow in real time, harvest them, craft goods, and sell your way up - all while the seasons grow harsher and more expensive to endure.
+Start with nothing but a humble starting capital of 100 dollars. Plant crops, watch them grow in real time, harvest them, craft goods, and sell your way up - all while the seasons grow harsher and more expensive to endure.
 
 ---
 
