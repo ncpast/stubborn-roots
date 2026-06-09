@@ -19,33 +19,38 @@ The core loop:
 
 ### 🗺️ Isometric Pixel Art World
 Our game features a unique hand drawn isometric artstyle
+
 ![Artstyle](./screenshot_art.png)
 
 ### 🌾 Real-Time Crop Growth
 Crops grow through multiple stages at varying speeds - no two fields look the same.
+
 ![Crop growth](./gif_crops.gif)
 
 ### 🍞 Crafting System
 Combine harvested crops into crafted goods. Turn wheat into bread, sell for higher margins.
+
 ![Making bread](./gif_bread.gif)
 
 ### 🍂 Dynamic Seasons
 The world visually transforms each season - grass, trees, and particle effects all change. Autumn brings falling orange leaves, winter brings snow, spring brings pink blossoms. Additionally, each season increases the prices of sell and purchase prices, allowing you to afford better crops with time and making other crops obsolete, forcing you to build more in order to make it profitable.
+
 ![Season switching](./gif_seasons.gif)
 
 <table>
   <tr>
-    <td><img src="./screenshot_summer.png" width="400"/></td>
-    <td><img src="./screenshot_autumn.png" width="400"/></td>
+    <td><img src="./screenshot_summer.png" width="500"/></td>
+    <td><img src="./screenshot_autumn.png" width="500"/></td>
   </tr>
   <tr>
-    <td><img src="./screenshot_winter.png" width="400"/></td>
-    <td><img src="./screenshot_spring.png" width="400"/></td>
+    <td><img src="./screenshot_winter.png" width="500"/></td>
+    <td><img src="./screenshot_spring.png" width="500"/></td>
   </tr>
 </table>
 
 ### 📱 Mobile-First Design
 Built from the ground up to be playable on mobile with a clean hotbar UI and touch-friendly controls.
+
 ![UI](./screenshot_controls.png)
 
 ---
